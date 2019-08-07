@@ -21,8 +21,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview <?=($this->uri->segment(2) == 'pemasukan' || $this->uri->segment(2) == 'pengeluaran' || $this->uri->segment(2) == 'rekapitulasi') ? 'menu-open' : ''; ?>">
-            <a href="#" class="nav-link <?=($this->uri->segment(2) == 'pemasukan' || $this->uri->segment(2) == 'pengeluaran' || $this->uri->segment(2) == 'rekapitulasi') ? 'active' : ''; ?>">
+          <li class="nav-item has-treeview <?=($this->uri->segment(2) == 'pemasukan' || $this->uri->segment(2) == 'laporan_siswa' || $this->uri->segment(2) == 'rekapitulasi') ? 'menu-open' : ''; ?>">
+            <a href="#" class="nav-link <?=($this->uri->segment(2) == 'pemasukan' || $this->uri->segment(2) == 'laporan_siswa' || $this->uri->segment(2) == 'rekapitulasi') ? 'active' : ''; ?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Keuangan
@@ -31,17 +31,18 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url('pages/pemasukan')?>" class="nav-link <?=($this->uri->segment(2) == 'pemasukan') ? 'active' : ''; ?>">
+                <a href="<?=base_url('home/pemasukan')?>" class="nav-link <?=($this->uri->segment(2) == 'pemasukan') ? 'active' : ''; ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pemasukan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('home/laporan_siswa')?>" class="nav-link <?=($this->uri->segment(2) == 'pengeluaran') ? 'active' : ''; ?>">
+                <a href="<?=base_url('home/laporan_siswa')?>" class="nav-link <?=($this->uri->segment(2) == 'laporan_siswa') ? 'active' : ''; ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan Siswa</p>
                 </a>
               </li>
+            </ul>
           <li class="nav-header">TEAMS</li>
           <li class="nav-item">
             <a href="<?=base_url('pages/team');?>" class="nav-link <?=($this->uri->segment(2) == 'team') ? 'active' : ''; ?>">
