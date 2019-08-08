@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Home :: DashKeu</title>
+  <title>Laporan Siswa :: DashKeu</title>
 
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url()?>assets/dist/img/favicon.png">
@@ -52,7 +52,7 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row">
           <div class="col-3">
-            <div class="input-group mb-3">
+            <div class="input-group">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">NIS</label>
               </div>
@@ -62,7 +62,7 @@ to get the desired effect
             </div>
           </div>
           <div class="col-4">
-            <div class="input-group mb-3">
+            <div class="input-group">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Sekolah</label>
               </div>
@@ -74,7 +74,7 @@ to get the desired effect
           <!-- /.col -->
           <!-- /.col -->
           <div class="col-3">
-            <div class="input-group mb-3">
+            <div class="input-group">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Tingkat</label>
               </div>
@@ -86,7 +86,7 @@ to get the desired effect
             </div>
           </div>
           <div class="col-2">
-            <div class="input-group mb-3">
+            <div class="input-group">
               <div class="input-group">
                   <button type="button" class="btn btn-primary" onclick="gogo()">Submit</button>
             </div>

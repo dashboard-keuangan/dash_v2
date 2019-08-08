@@ -69,13 +69,10 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row">
           <div class="col">
-            <!-- ============================================================== -->
-            <!-- End ALERT -->
             <div class="card">
               <div class="card-header">
                 <div class="d-flex justify-content-between">
                   <h3 class="card-title p-1">Data Pemasukan</h3>
-                  <span title="Tambah Data"><button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-default">Tambah Data Pemasukan</button></span>
                 </div>
               </div>
               <div class="card-body">
@@ -87,9 +84,10 @@ to get the desired effect
                     <form>
                       <select class="custom-select" id="pilih_sekolah" name='pilih_sekolah'>
                         <option value="0">Tampilkan semua</option>
-                        <?php foreach ($pilih_sekolah as $row) { ?> 
+                        <?php foreach ($pilih_sekolah as $row) { ?>
+                        <?php if($row->id_sekolah !== '6') { ?>
                         <option value='<?=$row->id_sekolah ?>'><?=$row->nama_sekolah ?></option>
-                        <?php } ?>
+                        <?php } } ?>
                       </select>
                     </form>
                   </div>
@@ -162,7 +160,7 @@ to get the desired effect
       console.log(id_sekolah);
       if (id_sekolah == 0){
         loadPemasukan();
-      }else{
+      } else{
         $.ajax({
             type: "GET",
             url: '<?php echo base_url() ?>home/show_data_by_id/'+id_sekolah,

@@ -43,16 +43,6 @@
                 </a>
               </li>
             </ul>
-          <li class="nav-header">TEAMS</li>
-          <li class="nav-item">
-            <a href="<?=base_url('pages/team');?>" class="nav-link <?=($this->uri->segment(2) == 'team') ? 'active' : ''; ?>">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Teams
-                <span class="badge badge-info right">5</span>
-              </p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

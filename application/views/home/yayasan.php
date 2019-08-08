@@ -1,4 +1,4 @@
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline text-center">
   <div class="card-header"><h3 class="card-title">Saldo <?=$nama_yayasan?></h3></div>
 </div>
 <div class="row">
@@ -57,11 +57,88 @@
 </div>
 <!-- /.info card -->
 
-<!-- Main row -->
+<div class="card card-primary card-outline text-center">
+  <div class="card-header"><h3 class="card-title">SISWA</h3></div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card card-warning">
+      <div class="card-header">
+        <h3 class="card-title"><?=$nama_smp?></h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <h2><?= $siswa_smp ?> Siswa</h2>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <div class="col-md-4">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title"><?=$nama_sma?></h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <h2><?= $siswa_sma ?> Siswa</h2>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <div class="col-md-4">
+    <div class="card card-danger">
+      <div class="card-header">
+        <h3 class="card-title"><?=$nama_smk?></h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <h2><?= $siswa_smk ?> Siswa</h2>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <div class="col-md-12 text-center">
+    <div class="card card-success">
+      <div class="card-header">
+        <h3 class="card-title">Total Siswa</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <h2><?= $siswa_smp+$siswa_sma+$siswa_smk ?> Siswa</h2>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
+
 <div class="row">
   <div class="col-lg-6 col-12">
     <!-- PIE CHART -->
-    <div class="card card-success">
+    <div class="card card-secondary">
       <div class="card-header text-center">
         <h3 class="card-title">Chart Total</h3>
       </div>
@@ -72,6 +149,27 @@
     </div>
     <!-- /.card -->
   </div>
+  <div class="col-lg-6 col-12">
+    <!-- BAR CHART -->
+    <div class="card card-secondary">
+      <div class="card-header">
+        <h3 class="card-title">Bar Chart</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart">
+          <canvas id="barChart" style="height:230px"></canvas>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+
 </div>
 
 <script>
@@ -110,5 +208,57 @@
       data: pieData,
       options: pieOptions      
     })
+
+    var barChartCanvas = $('#barChart').get(0).getContext('2d')
+    var barChartData = {
+      labels  : ['Total Siswa'],
+      datasets: [
+        {
+          label               : '<?=$nama_smp?>',
+          backgroundColor     : '#ffc107',
+          borderColor         : '#ffc107',
+          pointRadius          : false,
+          pointColor          : '#ffc107',
+          pointStrokeColor    : '#ffc107',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [<?=$siswa_smp ?>]
+        },
+        {
+          label               : '<?=$nama_sma?>',
+          backgroundColor     : '#00c0ef',
+          borderColor         : '#00c0ef',
+          pointRadius         : false,
+          pointColor          : '#00c0ef',
+          pointStrokeColor    : '#00c0ef',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [<?=$siswa_sma ?>]
+        },
+        {
+          label               : '<?=$nama_smk?>',
+          backgroundColor     : '#f56954',
+          borderColor         : '#f56954',
+          pointRadius         : false,
+          pointColor          : '#f56954',
+          pointStrokeColor    : '#f56954',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [<?=$siswa_smk ?>]
+        },
+      ]
+    }
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false
+    }
+
+    var barChart = new Chart(barChartCanvas, {
+      type: 'bar', 
+      data: barChartData,
+      options: barChartOptions
+    })
+
   })
 </script>

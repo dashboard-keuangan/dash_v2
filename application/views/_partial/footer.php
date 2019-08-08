@@ -1,6 +1,6 @@
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2019 <a href="https://github.com/dashboard-keuangan/dash-keu" target="_blank">Team KP</a>.</strong>
+    <strong>Copyright &copy; 2019 <a href="https://github.com/dashboard-keuangan/dash_v2" target="_blank">Team KP</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       Telkom University

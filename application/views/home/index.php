@@ -53,17 +53,20 @@ to get the desired effect
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="dropdown text-center">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-            -- Pilih Sekolah --
-          </button>
-          <div class="dropdown-menu">
-            <?php foreach($sekolah as $s) { ?>
-            <a class="dropdown-item" id="btnsekolah-<?=$s->id_sekolah?>" href="javascript:void(0)"><?=$s->nama_sekolah?></a>
-            <?php } ?>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Pilih Sekolah</label>
           </div>
+          <form>
+            <select class="custom-select" id="pilih_sekolah" name='pilih_sekolah'>
+              <option value="0">Tampilkan Semua</option>
+              <?php foreach ($sekolah as $s) { if ($s->id_sekolah !== '6') { ?>
+              <option value='<?=$s->id_sekolah ?>'><?=$s->nama_sekolah ?></option>
+              <?php } }?>
+            </select>
+          </form>
         </div>
-        <!-- /.dropdown -->
+        <!-- /.option -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -100,27 +103,26 @@ to get the desired effect
   function loadHome() {
     $('#content').load("<?php echo base_url().'home/yayasan' ?>");
   }
-  //$("#buttonsmp").click(function() {
-  //  $('#content').load("<?php echo base_url().'home/smp' ?>");
-  //  $("#buttonsmp").addClass("active");
-  //  $("#buttonsmk").removeClass("active");
-  //})
 
-  // load data
-  <?php foreach ($sekolah as $yuhu) { ?>
-  $('#btnsekolah-<?=$yuhu->id_sekolah?>').click(function(){
-    $.ajax({
-        type: "GET",
-        url: "<?php echo base_url().'home/'. $yuhu->Sekolah ?>",
-        data: { },
-        success: function(data){
+  $(function(){$('#pilih_sekolah').change(function(){
+      var id_sekolah = $(this).val();
+      console.log(id_sekolah);
+      if (id_sekolah == 0){
+        loadHome();
+      } else{
+        $.ajax({
+          type: "GET",
+          url: '<?php echo base_url() ?>home/sekolah/'+id_sekolah,
+          data: { },
+          success: function(data){
+            console.log(data);
             $('#content').html(data);
-        }
-    });
+          }
+        });
+      }
+    })
 
   });
-  <?php } ?>
 </script>
-
 </body>
 </html>
