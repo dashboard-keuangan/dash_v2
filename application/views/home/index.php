@@ -22,12 +22,7 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/additional.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <style>
-  .intro {
-    font-size: 150%;
-    color: red;
-  }
-  </style>
+
 </head>
 <!--
 BODY TAG OPTIONS:

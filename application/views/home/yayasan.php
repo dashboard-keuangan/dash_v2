@@ -1,137 +1,155 @@
 <div class="card card-primary card-outline text-center">
-  <div class="card-header"><h3 class="card-title">Saldo <?=$nama_yayasan?></h3></div>
+  <div class="card-header">
+    <h3 class="card-title">Saldo <?=$nama_yayasan?></h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+  <div class="row">
+    <div class="col-md-12">
+    <!-- small box -->
+      <div class="small-box bg-success">
+        <div class="inner">
+          <h3>Rp. <?php if (!$tot_yayasan) { echo "0"; } else { echo number_format("$tot_yayasan",2,",","."); } ?></h3>
+          <p>Total Pemasukan</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-archive"></i>
+        </div>
+        <a href="<?=base_url('home/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+    <!-- small box -->
+      <div class="small-box bg-warning">
+        <div class="inner">
+          <h3>Rp. <?php if (!$tot_smp) { echo "0"; } else { echo number_format("$tot_smp",2,",","."); } ?></h3>
+          <p><?=$nama_smp?></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-archive"></i>
+        </div>
+        <a href="<?=base_url('home/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+    <!-- small box -->
+      <div class="small-box bg-info">
+        <div class="inner">
+          <h3>Rp. <?php if (!$tot_sma) { echo "0"; } else { echo number_format("$tot_sma",2,",","."); } ?></h3>
+          <p><?=$nama_sma?></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-archive"></i>
+        </div>
+        <a href="<?=base_url('home/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <div class="col-md-12">
+    <!-- small box -->
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3>Rp. <?php if (!$tot_smk) { echo "0"; } else { echo number_format("$tot_smk",2,",","."); } ?></h3>
+          <p><?=$nama_smk?></p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-archive"></i>
+        </div>
+        <a href="<?=base_url('home/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- /.info card -->
+  </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
-  <!-- small box -->
-    <div class="small-box bg-success">
-      <div class="inner">
-        <h3>Rp. <?php if (!$tot_yayasan) { echo "0"; } else { echo number_format("$tot_yayasan",2,",","."); } ?></h3>
-        <p>Total Pemasukan</p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-archive"></i>
-      </div>
-      <a href="<?=base_url('pages/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-  <div class="col-md-6 col-sm-12">
-  <!-- small box -->
-    <div class="small-box bg-warning">
-      <div class="inner">
-        <h3>Rp. <?php if (!$tot_smp) { echo "0"; } else { echo number_format("$tot_smp",2,",","."); } ?></h3>
-        <p><?=$nama_smp?></p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-archive"></i>
-      </div>
-      <a href="<?=base_url('pages/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-  <div class="col-md-6 col-sm-12">
-  <!-- small box -->
-    <div class="small-box bg-info">
-      <div class="inner">
-        <h3>Rp. <?php if (!$tot_sma) { echo "0"; } else { echo number_format("$tot_sma",2,",","."); } ?></h3>
-        <p><?=$nama_sma?></p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-archive"></i>
-      </div>
-      <a href="<?=base_url('pages/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-  <div class="col-md-12">
-  <!-- small box -->
-    <div class="small-box bg-danger">
-      <div class="inner">
-        <h3>Rp. <?php if (!$tot_smk) { echo "0"; } else { echo number_format("$tot_smk",2,",","."); } ?></h3>
-        <p><?=$nama_smk?></p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-archive"></i>
-      </div>
-      <a href="<?=base_url('pages/pemasukan')?>" class="small-box-footer">Lihat rincian <i class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-</div>
-<!-- /.info card -->
+<!-- /.card -->
 
 <div class="card card-primary card-outline text-center">
-  <div class="card-header"><h3 class="card-title">SISWA</h3></div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <div class="card card-warning">
-      <div class="card-header">
-        <h3 class="card-title"><?=$nama_smp?></h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
-          </button>
-        </div>
-        <!-- /.card-tools -->
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <h2><?= $siswa_smp ?> Siswa</h2>
-      </div>
-      <!-- /.card-body -->
+  <div class="card-header"><h3 class="card-title">SISWA</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+      </button>
+      <button type="button" class="btn btn-tool" data-widget="remove"><i class="fas fa-times"></i></button>
     </div>
-    <!-- /.card -->
   </div>
-  <div class="col-md-4">
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title"><?=$nama_sma?></h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
-          </button>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="card card-warning">
+          <div class="card-header">
+            <h3 class="card-title"><?=$nama_smp?></h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h2><?= $siswa_smp ?> Siswa</h2>
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.card-tools -->
+        <!-- /.card -->
       </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <h2><?= $siswa_sma ?> Siswa</h2>
-      </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-  </div>
-  <div class="col-md-4">
-    <div class="card card-danger">
-      <div class="card-header">
-        <h3 class="card-title"><?=$nama_smk?></h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
-          </button>
+      <div class="col-md-4 text-center">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title"><?=$nama_sma?></h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h2><?= $siswa_sma ?> Siswa</h2>
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.card-tools -->
+        <!-- /.card -->
       </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <h2><?= $siswa_smk ?> Siswa</h2>
-      </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-  </div>
-  <div class="col-md-12 text-center">
-    <div class="card card-success">
-      <div class="card-header">
-        <h3 class="card-title">Total Siswa</h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
-          </button>
+      <div class="col-md-4 text-center">
+        <div class="card card-danger">
+          <div class="card-header">
+            <h3 class="card-title"><?=$nama_smk?></h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h2><?= $siswa_smk ?> Siswa</h2>
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.card-tools -->
+        <!-- /.card -->
       </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <h2><?= $siswa_smp+$siswa_sma+$siswa_smk ?> Siswa</h2>
+      <div class="col-md-12 text-center">
+        <div class="card card-success">
+          <div class="card-header">
+            <h3 class="card-title">Total Siswa</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h2><?= $siswa_smp+$siswa_sma+$siswa_smk ?> Siswa</h2>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
       </div>
-      <!-- /.card-body -->
     </div>
-    <!-- /.card -->
   </div>
 </div>
 
@@ -140,7 +158,12 @@
     <!-- PIE CHART -->
     <div class="card card-secondary">
       <div class="card-header text-center">
-        <h3 class="card-title">Chart Total</h3>
+        <h3 class="card-title">Chart Pemasukan</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove"><i class="fas fa-times"></i></button>
+        </div>
       </div>
       <div class="card-body">
         <canvas id="pieChart" style="height:230px"></canvas>
@@ -152,8 +175,8 @@
   <div class="col-lg-6 col-12">
     <!-- BAR CHART -->
     <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title">Bar Chart</h3>
+      <div class="card-header text-center">
+        <h3 class="card-title">Chart Siswa</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i>
           </button>
